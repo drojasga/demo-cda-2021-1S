@@ -6,3 +6,4 @@
 ## 
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
+cat person  | awk '/New York (New York)/ {print NR}' | awk '{++cnt} END {print cnt}'

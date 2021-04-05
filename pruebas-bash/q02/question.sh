@@ -23,14 +23,4 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-awk '!/^$/ 
-{c=0} 
-{ 
-    if (c > FNR && length != 0) 
-    { c=1 } 
-    split($2, columnas, ",");
-     for (columna in columnas) 
-     { 
-         print FILENAME","c","$1","columnas[columna]
-        } 
-}' *.csv
+awk '!/^$/ {c++} { if (c > FNR && length != 0) { c=1 } split($2, columnas, ","); for (columna in columnas) { print FILENAME","c","$1","columnas[columna] }}' *.csv

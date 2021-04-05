@@ -6,3 +6,4 @@
 ## 
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
+cat  data.csv  | awk '{++cnt} END {print "", cnt-1}'| sed 's/\ //g'

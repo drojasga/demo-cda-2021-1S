@@ -7,4 +7,5 @@
 ## 
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-cat data.csv | awk 'END {print}' |sed 's/\"//g'| cut -d "," -f5
+## cat  data.csv | awk 'END {print}' | cut -d "," -f5
+csvcut -c quota data.csv | tail -1

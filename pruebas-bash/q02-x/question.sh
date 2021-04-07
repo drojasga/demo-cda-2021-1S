@@ -23,4 +23,5 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-awk '!/^$/ {c++} { if (c > FNR && length != 0) { c=1 } split($2, columnas, ","); for (columna in columnas) { print FILENAME","c","$1","columnas[columna] }}' *.csv
+#awk '!/^$/ {c++} { if (c > FNR && length != 0) { c=1 } split($2, columnas, ","); for (columna in columnas) { print FILENAME","c","$1","columnas[columna] }}' *.csv
+#awk '!/^$/ {if (c > FNR && length != 0) {c=1 if (length($0) == 1) {lineaFalsa = 1 } } else { if (length($0) > 1 && lineaFalsa != 1) { c++ }} if (lineaFalsa == 1 && length($0) > 1) { lineaFalsa = 0} split($2, columnas, ","); for (columna in columnas) { print FILENAME","c","$1","columnas[columna]} }' *.csv
